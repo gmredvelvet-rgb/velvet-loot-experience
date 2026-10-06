@@ -1,0 +1,154 @@
+{
+  "VLR": {
+    "Sheet": { "Label": "Velvet Loot Reveal — Chest / Loot / Vault" },
+    "Title": "Loot Reveal",
+    "Collected": "Loot Collected",
+    "Pending": "Still hidden from players",
+    "Unknown": {
+      "Name": "Unknown Item"
+    },
+    "Aria": {
+      "Items": "Loot items. Use the left and right arrow keys to browse."
+    },
+    "Field": {
+      "Cost": "Cost",
+      "Level": "Level",
+      "Quantity": "Quantity"
+    },
+    "Action": {
+      "Previous": "Previous",
+      "Next": "Next",
+      "Take": "Take",
+      "TakeAll": "Take All",
+      "Inspect": "Inspect",
+      "Reveal": "Reveal",
+      "RevealAll": "Reveal All",
+      "Share": "Show to Players",
+      "OpenReveal": "Open Loot Reveal",
+      "NormalSheet": "Open Normal Loot Sheet",
+      "Close": "Close"
+    },
+    "Offer": {
+      "Text": "How do you want to open this loot?"
+    },
+    "Share": {
+      "Title": "Show loot: {name}",
+      "Target": "Show to",
+      "All": "All players",
+      "Users": "Specific players",
+      "Character": "Owners of a character",
+      "Local": "Only me",
+      "NoPlayers": "No players are connected.",
+      "Confirm": "Show"
+    },
+    "Rarity": {
+      "common": "Common",
+      "uncommon": "Uncommon",
+      "rare": "Rare",
+      "veryRare": "Very Rare",
+      "unique": "Unique",
+      "legendary": "Legendary",
+      "artifact": "Artifact"
+    },
+    "RevealMode": {
+      "immediate": "Immediate",
+      "player": "Player interaction",
+      "gm": "GM controlled"
+    },
+    "Warn": {
+      "NoNativeSheet": "No other sheet is registered for this actor type. Use Configure Sheet to change it.",
+      "NoRecipient": "Assign a character to your user or select one of your tokens to receive the loot.",
+      "NoPickup": "The GM has disabled picking up loot from this view.",
+      "NoGM": "A GM must be connected to pick up loot.",
+      "Locked": "This container is locked.",
+      "Timeout": "The GM did not answer the pickup request.",
+      "InvalidRequest": "Invalid pickup request.",
+      "NotOwner": "You do not own the character that would receive the item.",
+      "NotLootable": "You cannot loot this actor.",
+      "ItemGone": "That item is no longer there.",
+      "NotRevealed": "That item has not been revealed yet."
+    },
+    "Settings": {
+      "enabled": {
+        "Name": "Enable Velvet Loot Reveal",
+        "Hint": "Master switch. When off, no buttons are added and loot opens as usual."
+      },
+      "itemPiles": {
+        "Name": "Enable Item Piles integration",
+        "Hint": "Use the cinematic view for Item Piles piles and containers. Item Piles keeps handling storage and transfers."
+      },
+      "autoOffer": {
+        "Name": "Automatically offer cinematic view",
+        "Hint": "When someone interacts with a pile, ask whether to open the Loot Reveal or the normal loot sheet."
+      },
+      "autoOpen": {
+        "Name": "Automatically open cinematic view",
+        "Hint": "Open the Loot Reveal straight away when interacting with a pile. The normal sheet stays one button away."
+      },
+      "revealMode": {
+        "Name": "Reveal mode",
+        "Hint": "Immediate: items are visible at once. Player interaction: each player uncovers items on their own screen. GM controlled: players see ??? until the GM presses Reveal."
+      },
+      "syncReveal": {
+        "Name": "Synchronize reveal to players",
+        "Hint": "When the GM shows loot to players, their carousel follows the GM's selection and closes with the GM's."
+      },
+      "playerNavigation": {
+        "Name": "Allow player navigation",
+        "Hint": "Players can browse the carousel themselves."
+      },
+      "playerPickup": {
+        "Name": "Allow player pickup",
+        "Hint": "Players can take items from the cinematic view."
+      },
+      "showPrice": {
+        "Name": "Show price",
+        "Hint": "Display the item's cost in the information panel."
+      },
+      "showQuantity": {
+        "Name": "Show quantity",
+        "Hint": "Display stack sizes."
+      },
+      "showLevel": {
+        "Name": "Show item level",
+        "Hint": "Display the item level when the system has one."
+      },
+      "showTraits": {
+        "Name": "Show traits",
+        "Hint": "Display the item's traits or properties."
+      },
+      "sounds": {
+        "Name": "Enable sounds",
+        "Hint": "Play interface sounds on this client."
+      },
+      "volume": {
+        "Name": "Sound volume",
+        "Hint": "Volume of the Loot Reveal sounds, on top of Foundry's interface volume."
+      },
+      "raritySounds": {
+        "Name": "Rarity sounds",
+        "Hint": "Use a different reveal sound for each rarity."
+      },
+      "navigationSounds": {
+        "Name": "Navigation sounds",
+        "Hint": "Play a tick when moving through the carousel."
+      },
+      "pickupSounds": {
+        "Name": "Pickup sounds",
+        "Hint": "Play a sound when taking an item."
+      },
+      "animations": {
+        "Name": "Enable animations",
+        "Hint": "Turn off for a static view. The system's reduced-motion preference is always respected."
+      },
+      "particles": {
+        "Name": "Enable particles",
+        "Hint": "Burst of particles when a rare item is revealed."
+      },
+      "rarityGlow": {
+        "Name": "Enable rarity glow",
+        "Hint": "Coloured glow behind the selected item."
+      }
+    }
+  }
+}

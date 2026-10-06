@@ -1,0 +1,120 @@
+<section class="vlr-scene{{#if empty}} is-empty{{/if}}" role="dialog" aria-modal="true" aria-label="{{localize "VLR.Title"}}: {{actorName}}">
+
+  <header class="vlr-header">
+    <p class="vlr-header__eyebrow">{{localize "VLR.Title"}}</p>
+    <h2 class="vlr-header__title">{{actorName}}</h2>
+    {{#if currencies}}
+    <p class="vlr-header__currencies"><i class="fa-solid fa-coins" inert></i> {{currencies}}</p>
+    {{/if}}
+  </header>
+
+  {{#if empty}}
+  <div class="vlr-collected" role="status">
+    <span class="vlr-collected__text">{{localize "VLR.Collected"}}</span>
+  </div>
+  {{else}}
+  <div class="vlr-stage">
+    <div class="vlr-stage__sigil" aria-hidden="true"></div>
+    <button type="button" class="vlr-arrow vlr-arrow--prev" data-action="prev" {{#unless canNavigate}}disabled{{/unless}}>
+      <i class="fa-solid fa-chevron-left" inert></i>
+      <span class="vlr-arrow__label">{{localize "VLR.Action.Previous"}}</span>
+    </button>
+
+    <ul class="vlr-track" role="listbox" tabindex="0" aria-label="{{localize "VLR.Aria.Items"}}">
+      {{#each items}}
+      <li class="vlr-card {{rarity.cssClass}} vlr-preset-{{preset}}{{#if hidden}} is-hidden{{/if}}{{#if pending}} is-pending{{/if}}"
+          data-item-id="{{id}}" data-action="select" role="option" aria-selected="false" aria-label="{{name}}">
+        <div class="vlr-card__glow" aria-hidden="true"></div>
+        <div class="vlr-card__orbit" aria-hidden="true"></div>
+        <div class="vlr-card__frame">
+          <div class="vlr-card__inlay" aria-hidden="true"></div>
+          <div class="vlr-card__shine" aria-hidden="true"></div>
+          <span class="vlr-card__corner vlr-card__corner--tl" aria-hidden="true"></span>
+          <span class="vlr-card__corner vlr-card__corner--tr" aria-hidden="true"></span>
+          <span class="vlr-card__corner vlr-card__corner--bl" aria-hidden="true"></span>
+          <span class="vlr-card__corner vlr-card__corner--br" aria-hidden="true"></span>
+          {{#if hidden}}
+          <span class="vlr-card__unknown" aria-hidden="true">?</span>
+          {{else}}
+          <img class="vlr-card__img" data-src="{{image}}" alt="" draggable="false">
+          {{/if}}
+          <span class="vlr-card__seal" aria-hidden="true"><i class="{{icon}}" inert></i></span>
+          <span class="vlr-card__rarity">{{rarity.label}}</span>
+          {{#if showQuantity}}<span class="vlr-card__qty">&times;{{quantity}}</span>{{/if}}
+          {{#if pending}}
+          <span class="vlr-card__pending" data-tooltip aria-label="{{localize "VLR.Pending"}}"><i class="fa-solid fa-eye-slash" inert></i></span>
+          {{/if}}
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+
+    <button type="button" class="vlr-arrow vlr-arrow--next" data-action="next" {{#unless canNavigate}}disabled{{/unless}}>
+      <i class="fa-solid fa-chevron-right" inert></i>
+      <span class="vlr-arrow__label">{{localize "VLR.Action.Next"}}</span>
+    </button>
+
+    <div class="vlr-particles" aria-hidden="true"></div>
+  </div>
+
+  <div class="vlr-banner" aria-live="polite">
+    <p class="vlr-banner__position" data-field="position"></p>
+    <p class="vlr-banner__type"><i data-field="icon" inert></i> <span data-field="type"></span></p>
+    <h3 class="vlr-banner__name" data-field="name"></h3>
+    <p class="vlr-banner__rarity" data-field="rarity"></p>
+    <dl class="vlr-banner__meta">
+      <div class="vlr-meta" data-meta="cost">
+        <dt>{{localize "VLR.Field.Cost"}}</dt>
+        <dd data-field="cost"></dd>
+      </div>
+      <div class="vlr-meta" data-meta="level" hidden>
+        <dt>{{localize "VLR.Field.Level"}}</dt>
+        <dd data-field="level"></dd>
+      </div>
+      <div class="vlr-meta" data-meta="quantity" hidden>
+        <dt>{{localize "VLR.Field.Quantity"}}</dt>
+        <dd data-field="quantity"></dd>
+      </div>
+    </dl>
+    <div class="vlr-banner__traits" data-field="traits"></div>
+  </div>
+  {{/if}}
+
+  <footer class="vlr-actions">
+    {{#unless empty}}
+    {{#if canTake}}
+    <button type="button" class="vlr-btn vlr-btn--primary" data-action="take">
+      <i class="fa-solid fa-hand-holding" inert></i> <span>{{localize "VLR.Action.Take"}}</span>
+    </button>
+    <button type="button" class="vlr-btn" data-action="takeAll">
+      <i class="fa-solid fa-sack-xmark" inert></i> <span>{{localize "VLR.Action.TakeAll"}}</span>
+    </button>
+    {{/if}}
+    <button type="button" class="vlr-btn" data-action="inspect">
+      <i class="fa-solid fa-magnifying-glass" inert></i> <span>{{localize "VLR.Action.Inspect"}}</span>
+    </button>
+    <button type="button" class="vlr-btn vlr-btn--reveal" data-action="reveal" hidden>
+      <i class="fa-solid fa-eye" inert></i> <span>{{localize "VLR.Action.Reveal"}}</span>
+    </button>
+    {{#if gmMode}}
+    <button type="button" class="vlr-btn vlr-btn--reveal" data-action="revealAll" hidden>
+      <i class="fa-solid fa-eye" inert></i> <span>{{localize "VLR.Action.RevealAll"}}</span>
+    </button>
+    {{/if}}
+    {{/unless}}
+    {{#if isGM}}
+    <button type="button" class="vlr-btn" data-action="configureSheet">
+      <i class="fa-solid fa-gear" inert></i> <span>{{localize "SHEETS.ConfigureSheet"}}</span>
+    </button>
+    <button type="button" class="vlr-btn" data-action="share">
+      <i class="fa-solid fa-users" inert></i> <span>{{localize "VLR.Action.Share"}}</span>
+    </button>
+    {{/if}}
+    <button type="button" class="vlr-btn" data-action="nativeSheet">
+      <i class="fa-solid fa-box-open" inert></i> <span>{{localize "VLR.Action.NormalSheet"}}</span>
+    </button>
+    <button type="button" class="vlr-btn vlr-btn--ghost" data-action="dismiss">
+      <i class="fa-solid fa-xmark" inert></i> <span>{{localize "VLR.Action.Close"}}</span>
+    </button>
+  </footer>
+</section>

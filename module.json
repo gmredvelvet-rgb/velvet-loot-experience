@@ -1,0 +1,50 @@
+{
+  "id": "velvet-loot-experience",
+  "title": "Velvet Loot Reveal",
+  "description": "Presentacion cinematica del botin: un carrusel estilo pantalla de recompensas con rareza, precio, animaciones y sonido. Se integra con Item Piles cuando esta activo (que sigue siendo quien guarda, cuenta y transfiere los objetos) y funciona tambien con actores de botin nativos como los de PF2e.",
+  "version": "0.3.0",
+  "authors": [
+    {
+      "name": "GM RedVelvet",
+      "email": "gmredvelvet@gmail.com",
+      "url": "https://github.com/gmredvelvet-rgb",
+      "discord": "gmredvelvet"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/loot-carousel.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    },
+    {
+      "lang": "es",
+      "name": "Espanol",
+      "path": "lang/es.json"
+    }
+  ],
+  "socket": true,
+  "relationships": {
+    "recommends": [
+      {
+        "id": "item-piles",
+        "type": "module",
+        "compatibility": {
+          "minimum": "3.0.0",
+          "verified": "3.3.4"
+        },
+        "reason": "Si esta activo, las pilas y contenedores de Item Piles se pueden abrir con el carrusel y las transferencias pasan por su API."
+      }
+    ]
+  }
+}

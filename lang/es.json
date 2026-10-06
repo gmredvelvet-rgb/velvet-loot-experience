@@ -1,0 +1,154 @@
+{
+  "VLR": {
+    "Sheet": { "Label": "Velvet Loot Reveal — Cofre / Botín / Vault" },
+    "Title": "Botín",
+    "Collected": "Botín recogido",
+    "Pending": "Todavía oculto para los jugadores",
+    "Unknown": {
+      "Name": "Objeto desconocido"
+    },
+    "Aria": {
+      "Items": "Objetos del botín. Usa las flechas izquierda y derecha para recorrerlos."
+    },
+    "Field": {
+      "Cost": "Precio",
+      "Level": "Nivel",
+      "Quantity": "Cantidad"
+    },
+    "Action": {
+      "Previous": "Anterior",
+      "Next": "Siguiente",
+      "Take": "Recoger",
+      "TakeAll": "Recoger todo",
+      "Inspect": "Inspeccionar",
+      "Reveal": "Revelar",
+      "RevealAll": "Revelar todo",
+      "Share": "Mostrar a los jugadores",
+      "OpenReveal": "Abrir revelado de botín",
+      "NormalSheet": "Abrir hoja de botín normal",
+      "Close": "Cerrar"
+    },
+    "Offer": {
+      "Text": "¿Cómo quieres abrir este botín?"
+    },
+    "Share": {
+      "Title": "Mostrar botín: {name}",
+      "Target": "Mostrar a",
+      "All": "Todos los jugadores",
+      "Users": "Jugadores concretos",
+      "Character": "Dueños de un personaje",
+      "Local": "Solo yo",
+      "NoPlayers": "No hay jugadores conectados.",
+      "Confirm": "Mostrar"
+    },
+    "Rarity": {
+      "common": "Común",
+      "uncommon": "Poco común",
+      "rare": "Raro",
+      "veryRare": "Muy raro",
+      "unique": "Único",
+      "legendary": "Legendario",
+      "artifact": "Artefacto"
+    },
+    "RevealMode": {
+      "immediate": "Inmediato",
+      "player": "Interacción del jugador",
+      "gm": "Controlado por el GM"
+    },
+    "Warn": {
+      "NoNativeSheet": "No hay otra hoja registrada para este tipo de actor. Usa Configurar hoja para cambiarla.",
+      "NoRecipient": "Asigna un personaje a tu usuario o selecciona uno de tus tokens para recibir el botín.",
+      "NoPickup": "El GM ha desactivado recoger botín desde esta vista.",
+      "NoGM": "Tiene que haber un GM conectado para recoger botín.",
+      "Locked": "Este contenedor está cerrado con llave.",
+      "Timeout": "El GM no respondió a la petición de recogida.",
+      "InvalidRequest": "Petición de recogida no válida.",
+      "NotOwner": "No eres dueño del personaje que recibiría el objeto.",
+      "NotLootable": "No puedes saquear este actor.",
+      "ItemGone": "Ese objeto ya no está.",
+      "NotRevealed": "Ese objeto todavía no ha sido revelado."
+    },
+    "Settings": {
+      "enabled": {
+        "Name": "Activar Velvet Loot Reveal",
+        "Hint": "Interruptor general. Apagado, no se añade ningún botón y el botín se abre como siempre."
+      },
+      "itemPiles": {
+        "Name": "Activar integración con Item Piles",
+        "Hint": "Usa la vista cinemática en pilas y contenedores de Item Piles. Item Piles sigue encargándose del inventario y las transferencias."
+      },
+      "autoOffer": {
+        "Name": "Ofrecer la vista cinemática automáticamente",
+        "Hint": "Al interactuar con una pila, pregunta si abrir el revelado de botín o la hoja normal."
+      },
+      "autoOpen": {
+        "Name": "Abrir la vista cinemática automáticamente",
+        "Hint": "Abre el revelado de botín directamente al interactuar con una pila. La hoja normal queda a un botón."
+      },
+      "revealMode": {
+        "Name": "Modo de revelado",
+        "Hint": "Inmediato: los objetos se ven desde el principio. Interacción del jugador: cada jugador descubre los objetos en su pantalla. Controlado por el GM: los jugadores ven ??? hasta que el GM pulsa Revelar."
+      },
+      "syncReveal": {
+        "Name": "Sincronizar el revelado con los jugadores",
+        "Hint": "Cuando el GM muestra un botín, el carrusel de los jugadores sigue su selección y se cierra con el suyo."
+      },
+      "playerNavigation": {
+        "Name": "Permitir navegar a los jugadores",
+        "Hint": "Los jugadores pueden recorrer el carrusel por su cuenta."
+      },
+      "playerPickup": {
+        "Name": "Permitir recoger a los jugadores",
+        "Hint": "Los jugadores pueden recoger objetos desde la vista cinemática."
+      },
+      "showPrice": {
+        "Name": "Mostrar precio",
+        "Hint": "Muestra el precio del objeto en el panel de información."
+      },
+      "showQuantity": {
+        "Name": "Mostrar cantidad",
+        "Hint": "Muestra el tamaño de los montones."
+      },
+      "showLevel": {
+        "Name": "Mostrar nivel del objeto",
+        "Hint": "Muestra el nivel del objeto cuando el sistema lo tiene."
+      },
+      "showTraits": {
+        "Name": "Mostrar rasgos",
+        "Hint": "Muestra los rasgos o propiedades del objeto."
+      },
+      "sounds": {
+        "Name": "Activar sonidos",
+        "Hint": "Reproduce los sonidos de interfaz en este cliente."
+      },
+      "volume": {
+        "Name": "Volumen de los sonidos",
+        "Hint": "Volumen de los sonidos del revelado, sobre el volumen de interfaz de Foundry."
+      },
+      "raritySounds": {
+        "Name": "Sonidos por rareza",
+        "Hint": "Usa un sonido de revelado distinto para cada rareza."
+      },
+      "navigationSounds": {
+        "Name": "Sonidos de navegación",
+        "Hint": "Reproduce un clic al moverse por el carrusel."
+      },
+      "pickupSounds": {
+        "Name": "Sonidos de recogida",
+        "Hint": "Reproduce un sonido al recoger un objeto."
+      },
+      "animations": {
+        "Name": "Activar animaciones",
+        "Hint": "Apágalo para una vista estática. La preferencia de movimiento reducido del sistema se respeta siempre."
+      },
+      "particles": {
+        "Name": "Activar partículas",
+        "Hint": "Ráfaga de partículas al revelar un objeto raro."
+      },
+      "rarityGlow": {
+        "Name": "Activar brillo de rareza",
+        "Hint": "Brillo de color detrás del objeto seleccionado."
+      }
+    }
+  }
+}
