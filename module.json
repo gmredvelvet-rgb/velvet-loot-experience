@@ -16,10 +16,12 @@
     "verified": "14"
   },
   "esmodules": [
-    "scripts/main.js"
+    "scripts/main.js",
+    "scripts/license/boot.js"
   ],
   "styles": [
-    "styles/loot-carousel.css"
+    "styles/loot-carousel.css",
+    "styles/license.css"
   ],
   "languages": [
     {
@@ -45,6 +47,22 @@
         },
         "reason": "Si esta activo, las pilas y contenedores de Item Piles se pueden abrir con el carrusel y las transferencias pasan por su API."
       }
+    ],
+    "requires": [
+      {
+        "id": "velvet-license-hub",
+        "type": "module",
+        "manifest": "https://github.com/gmredvelvet-rgb/velvet-license-hub/releases/latest/download/module.json",
+        "compatibility": {
+          "minimum": "2.0.0"
+        }
+      }
     ]
-  }
+  },
+  "url": "https://github.com/gmredvelvet-rgb/velvet-loot-experience",
+  "manifest": "https://github.com/gmredvelvet-rgb/velvet-loot-experience/releases/latest/download/module.json",
+  "download": "https://github.com/gmredvelvet-rgb/velvet-loot-experience/releases/latest/download/module.zip",
+  "readme": "https://github.com/gmredvelvet-rgb/velvet-loot-experience#readme",
+  "bugs": "https://github.com/gmredvelvet-rgb/velvet-loot-experience/issues",
+  "license": "SEE LICENSE IN LICENSE"
 }

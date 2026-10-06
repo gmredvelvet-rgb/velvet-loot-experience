@@ -1,6 +1,8 @@
 {
   "VLR": {
-    "Sheet": { "Label": "Velvet Loot Reveal — Cofre / Botín / Vault" },
+    "Sheet": {
+      "Label": "Velvet Loot Reveal — Cofre / Botín / Vault"
+    },
     "Title": "Botín",
     "Collected": "Botín recogido",
     "Pending": "Todavía oculto para los jugadores",
@@ -150,5 +152,29 @@
         "Hint": "Brillo de color detrás del objeto seleccionado."
       }
     }
-  }
+  },
+  "velvet-loot-experience.Settings.License.Name": "Licencia de Patreon",
+  "velvet-loot-experience.Settings.License.Label": "Gestionar licencia",
+  "velvet-loot-experience.Settings.License.Hint": "Conecta tu cuenta de Patreon para quitar el recordatorio de prueba gratuita, o libera la plaza de instalacion para usarla en otro sitio. Solo GM: todas las funciones sirven igual.",
+  "velvet-loot-experience.License.TrialBadge": "Prueba gratuita",
+  "velvet-loot-experience.License.TrialIntro": "Estas usando Velvet Loot Reveal en modo de prueba gratuita: todas las funciones estan disponibles.",
+  "velvet-loot-experience.License.TrialPitch": "Unete a Patreon para apoyar el desarrollo, quitar este recordatorio y desbloquear este modulo y muchos mas.",
+  "velvet-loot-experience.License.TrialIntroPlayer": "Tu GM esta usando Velvet Loot Reveal en modo de prueba gratuita.",
+  "velvet-loot-experience.License.TrialPlayerNote": "No tienes que hacer nada: la mesa tiene todas las funciones disponibles.",
+  "velvet-loot-experience.License.Connect": "Conectar con Patreon",
+  "velvet-loot-experience.License.Opening": "Abriendo Patreon…",
+  "velvet-loot-experience.License.HaveCode": "Tengo un código",
+  "velvet-loot-experience.License.Later": "Más tarde",
+  "velvet-loot-experience.License.Close": "Cerrar",
+  "velvet-loot-experience.License.Cancelled": "Autorización cancelada. Si la ventana emergente no se abrió, usa la opción «Tengo un código».",
+  "velvet-loot-experience.License.Connected": "Conectado como suscriptor {tier}. ¡Bienvenido!",
+  "velvet-loot-experience.License.CodeTitle": "Introducir código",
+  "velvet-loot-experience.License.CodeHint": "Pega el código que aparece tras conectar tu cuenta de Patreon.",
+  "velvet-loot-experience.License.Activate": "Activar",
+  "velvet-loot-experience.License.StatusActive": "Licencia activa: suscriptor {tier}. ¡Gracias por tu apoyo!",
+  "velvet-loot-experience.License.StatusTrusted": "Licencia verificada. Se revalida sola: no se te volverá a preguntar.",
+  "velvet-loot-experience.License.Released": "Plaza de instalación liberada.",
+  "velvet-loot-experience.License.Release": "Liberar instalación",
+  "velvet-loot-experience.License.ReleaseHint": "Libera la plaza si vas a mover tu suscripción a otro servidor o navegador.",
+  "velvet-loot-experience.License.ReleaseConfirm": "¿Liberar esta instalación? Velvet Loot Reveal sigue funcionando, pero el recordatorio de prueba gratuita vuelve hasta que conectes de nuevo."
 }
