@@ -79,6 +79,14 @@
         "Name": "Activar integración con Item Piles",
         "Hint": "Usa la vista cinemática en pilas y contenedores de Item Piles. Item Piles sigue encargándose del inventario y las transferencias."
       },
+      "autoShowPlayers": {
+        "Name": "Mostrar el botín a todos automáticamente",
+        "Hint": "Activado por defecto. Cuando el GM abre el carrusel de botín, también se abre para todos los jugadores conectados. Mostrar a los jugadores permite elegir destinatarios para una apertura manual."
+      },
+      "notifyGMOnOpen": {
+        "Name": "Avisar al GM cuando un jugador abre un botín",
+        "Hint": "Cuando un jugador abre un carrusel de botín por su cuenta, cada GM conectado recibe un aviso breve. El botín que el GM muestra a los jugadores nunca lo dispara."
+      },
       "autoOffer": {
         "Name": "Ofrecer la vista cinemática automáticamente",
         "Hint": "Al interactuar con una pila, pregunta si abrir el revelado de botín o la hoja normal."
@@ -151,6 +159,9 @@
         "Name": "Activar brillo de rareza",
         "Hint": "Brillo de color detrás del objeto seleccionado."
       }
+    },
+    "Notify": {
+      "PlayerOpened": "{player} ha abierto el botín de {actor}."
     }
   },
   "velvet-loot-experience.Settings.License.Name": "Licencia de Patreon",

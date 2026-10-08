@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0
+
+- Al abrir el carrusel como GM, se muestra automáticamente a todos los jugadores conectados; nuevo ajuste de mundo activado por defecto. Las pilas cerradas de Item Piles no se muestran solas.
+- Cuando un jugador abre un botín por su cuenta, cada GM conectado recibe un aviso con el jugador y el botín; nuevo ajuste de mundo activado por defecto. La opción `notifyGM: false` de la API lo silencia para una apertura.
+- Las aperturas manuales con destinatarios concretos conservan su selección y los refrescos del inventario no vuelven a abrir el botín en otros clientes.
+
 ## 0.3.0
 
 - Velvet Loot Reveal registrado como hoja real `ActorSheetV2`, seleccionable desde Sheet / Configurar hoja.

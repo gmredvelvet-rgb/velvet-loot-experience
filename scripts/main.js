@@ -29,7 +29,7 @@ Hooks.once("init", () => {
 
 Hooks.once("ready", () => {
   RevealService.init({
-    open: (actor) => openReveal(actor, { externalAccess: true }),
+    open: (actor) => openReveal(actor, { externalAccess: true, autoShow: false, notifyGM: false }),
     close: (actorUuid) => LootCarouselApplication.instances.get(actorUuid)?.close(),
     revealed: (actorUuid, itemIds) => LootCarouselApplication.instances.get(actorUuid)?.onRevealed(itemIds),
     navigate: (actorUuid, itemId) => LootCarouselApplication.instances.get(actorUuid)?.selectById(itemId, { remote: true })
@@ -37,14 +37,14 @@ Hooks.once("ready", () => {
   registerHooks();
 
   game.modules.get(MODULE_ID).api = {
-    /** Abre el carrusel en este cliente para cualquier actor con objetos. */
+    /** Abre el carrusel; el GM lo muestra tambien a los jugadores por defecto. */
     open: openReveal,
     /** GM: dialogo para mostrar el botin a los jugadores. */
     showToPlayers,
     /** GM: abre el carrusel directamente a una lista de ids de usuario. */
     show: async (actor, userIds = []) => {
-      await openReveal(actor);
-      RevealService.show(actor, userIds);
+      const app = await openReveal(actor, { autoShow: false });
+      if (app?.rendered) RevealService.show(actor, userIds);
     },
     /** GM: cierra el carrusel a quienes se les abrio. */
     hide: (actor) => RevealService.hide(actor),

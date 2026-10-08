@@ -18,10 +18,12 @@ Es solo una capa de presentación. Si Item Piles está activo, **Item Piles sigu
 
 El módulo registra una hoja real basada en `ActorSheetV2`. La selección se guarda mediante la configuración nativa de Foundry; también puede elegirse como hoja por defecto de un tipo de actor. No se cambian automáticamente las hojas de otros actores.
 
+**Por defecto, cuando el GM abre el carrusel, también se abre automáticamente para todos los jugadores conectados**, como al usar **Mostrar a los jugadores → Todos los jugadores**, sin diálogo. Se aplica al abrir la hoja, interactuar con Item Piles o usar la macro de apertura. Las aperturas de un jugador son locales. Puedes desactivarlo en **Mostrar el botín a todos automáticamente** en los ajustes del módulo.
+
 | Desde | Qué aparece |
 | --- | --- |
 | Abrir un actor con la hoja Velvet seleccionada | El carrusel directamente |
-| Interacción con una pila, cofre o Vault de Item Piles con la hoja Velvet seleccionada | El carrusel directamente para quien interactúa |
+| Interacción con una pila, cofre o Vault de Item Piles con la hoja Velvet seleccionada | El carrusel para quien interactúa; si es el GM, también para todos los jugadores conectados por defecto |
 | Contenedor con otra hoja seleccionada | Su interfaz habitual |
 | Clic derecho en el directorio de actores (GM) | "Mostrar a los jugadores" |
 | Macro | `game.modules.get("velvet-loot-experience").api.open(actor)` |
@@ -37,6 +39,10 @@ Desde 0.3.0, la selección en **Sheet** determina la apertura; los antiguos ajus
 Los efectos respetan los ajustes personales de animación, partículas y brillo, además del movimiento reducido del sistema. Los objetos ocultos usan un marco neutro sin revelar su tipo o rareza.
 
 Validación del protocolo de recogida: `node tools/test-player-loot.mjs` (usa documentos simulados; no modifica el mundo).
+
+Cuando un jugador abre un botín por su cuenta (su hoja o una pila de Item Piles), los GM conectados reciben un aviso breve; el botín que el GM muestra a los jugadores no lo dispara. Las pilas cerradas de Item Piles no se muestran automáticamente a la mesa.
+
+Validación de apertura automática, avisos al GM y destinatarios manuales: `node tools/test-auto-show.mjs` (simula el ciclo de render y los mensajes entre clientes).
 
 ## Controles
 
@@ -57,11 +63,11 @@ Recoger entrega el montón completo al personaje asignado al usuario o, si no ti
 - **Interacción del jugador**: cada jugador descubre los objetos en su propia pantalla.
 - **Controlado por el GM**: los jugadores ven `???` / "Objeto desconocido" hasta que el GM pulsa **Revelar** (o **Revelar todo**). El revelado llega a todos a la vez.
 
-El GM puede mostrar un botín a todos los jugadores, a jugadores concretos, a los dueños de un personaje o solo a sí mismo. Con "Sincronizar el revelado" activo, el carrusel de los jugadores sigue la selección del GM y se cierra con el suyo.
+El GM puede usar **Mostrar a los jugadores** para mostrar un botín a todos los jugadores, a jugadores concretos, a los dueños de un personaje o solo a sí mismo. Esta apertura manual respeta los destinatarios elegidos aunque el envío automático esté activo; no cierra las vistas que ya estuvieran abiertas. Con "Sincronizar el revelado" activo, el carrusel de los jugadores sigue la selección del GM y se cierra con el suyo.
 
 ## Ajustes
 
-De mundo: activar el módulo, integración con Item Piles, modo de revelado, sincronización, navegación y recogida de los jugadores, y qué datos se muestran (precio, cantidad, nivel, rasgos). La hoja se elige en la configuración **Sheet** de cada actor.
+De mundo: activar el módulo, integración con Item Piles, mostrar el botín a todos automáticamente (activado por defecto), avisar al GM cuando un jugador abre un botín (activado por defecto), modo de revelado, sincronización, navegación y recogida de los jugadores, y qué datos se muestran (precio, cantidad, nivel, rasgos). La hoja se elige en la configuración **Sheet** de cada actor.
 
 De cliente: sonidos (general, volumen, por rareza, navegación, recogida), animaciones, partículas y brillo de rareza. La preferencia de movimiento reducido del sistema operativo se respeta siempre.
 

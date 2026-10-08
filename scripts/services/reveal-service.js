@@ -157,6 +157,14 @@ async function onMessage(data, userId) {
     return;
   }
 
+  // Aviso de un jugador que abrio un botin por su cuenta: solo informa a los GM.
+  if (data.action === ACTIONS.PLAYER_OPENED) {
+    if (!game.user.isGM || sender.isGM || typeof data.actorUuid !== "string") return;
+    const actor = await foundry.utils.fromUuid(data.actorUuid);
+    if (actor instanceof Actor) globalThis.ui.notifications.info(loc("Notify.PlayerOpened", { player: sender.name, actor: actor.name }));
+    return;
+  }
+
   // Todo lo demas son ordenes del GM.
   if (!sender.isGM || typeof data.actorUuid !== "string") return;
 
@@ -224,6 +232,13 @@ export const RevealService = {
     const state = session(actor.uuid);
     state.users = [...new Set([...state.users, ...userIds])];
     emit(ACTIONS.OPEN, { actorUuid: actor.uuid, state: serialize(state), users: userIds });
+  },
+
+  /** Jugador: avisa a los GM conectados de que ha abierto este botin por su cuenta. */
+  announceOpened(actor) {
+    if (game.user.isGM) return;
+    const gms = game.users.filter((user) => user.active && user.isGM).map((user) => user.id);
+    if (gms.length) emit(ACTIONS.PLAYER_OPENED, { actorUuid: actor.uuid, users: gms });
   },
 
   /** GM: cierra el carrusel en los clientes a los que se lo abrio. */
