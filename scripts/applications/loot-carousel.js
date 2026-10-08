@@ -101,7 +101,7 @@ export class LootCarouselApplication extends HandlebarsApplicationMixin(ActorShe
   /*  Apertura                                    */
   /* -------------------------------------------- */
 
-  static async open(actor, { recipient = null, externalAccess = false } = {}) {
+  static async open(actor, { recipient = null, externalAccess = false, autoShow = true, notifyGM = true } = {}) {
     if (!actor) return null;
     let app = this.instances.get(actor.uuid);
     if (!app) {
@@ -110,7 +110,7 @@ export class LootCarouselApplication extends HandlebarsApplicationMixin(ActorShe
     }
     app.#inspectingRecipient = recipient;
     app.#externalAccess = externalAccess;
-    await app.render({ force: true });
+    await app.render({ force: true, autoShow, notifyGM });
     return app;
   }
 
@@ -200,7 +200,17 @@ export class LootCarouselApplication extends HandlebarsApplicationMixin(ActorShe
     root.classList.toggle("vlr-no-particles", !setting("particles"));
     this.#syncDom();
 
-    if (options.isFirstRender) this.#onOpen();
+    if (options.isFirstRender) {
+      this.#onOpen();
+      // Una pila cerrada no se ensena sola: el GM puede mirarla sin abrirsela a la mesa.
+      if (game.user.isGM && setting("enabled") && setting("autoShowPlayers") && options.autoShow !== false
+        && !LootService.isLocked(this.actor)) {
+        const players = game.users.filter((user) => user.active && !user.isGM);
+        RevealService.show(this.actor, players.map((user) => user.id));
+      } else if (!game.user.isGM && setting("enabled") && setting("notifyGMOnOpen") && options.notifyGM !== false) {
+        RevealService.announceOpened(this.actor);
+      }
+    }
 
     if (this.#items.length) {
       this.#hadItems = true;

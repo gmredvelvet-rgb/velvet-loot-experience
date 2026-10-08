@@ -17,6 +17,8 @@ export function registerSettings(onChange = () => {}) {
 
   toggle("enabled", true);
   toggle("itemPiles", true);
+  toggle("autoShowPlayers", true);
+  toggle("notifyGMOnOpen", true);
   // Retain stored keys for compatibility; sheet selection now controls opening.
   register("autoOffer", { scope: "world", type: Boolean, default: false, config: false });
   register("autoOpen", { scope: "world", type: Boolean, default: false, config: false });

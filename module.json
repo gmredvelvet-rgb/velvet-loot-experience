@@ -2,7 +2,7 @@
   "id": "velvet-loot-experience",
   "title": "Velvet Loot Reveal",
   "description": "Presentacion cinematica del botin: un carrusel estilo pantalla de recompensas con rareza, precio, animaciones y sonido. Se integra con Item Piles cuando esta activo (que sigue siendo quien guarda, cuenta y transfiere los objetos) y funciona tambien con actores de botin nativos como los de PF2e.",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "authors": [
     {
       "name": "GM RedVelvet",

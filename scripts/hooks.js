@@ -79,8 +79,8 @@ export async function showToPlayers(actor) {
   });
   if (!form) return;
 
-  await openReveal(actor);
-  RevealService.show(actor, recipientsFrom(form));
+  const app = await openReveal(actor, { autoShow: false });
+  if (app?.rendered) RevealService.show(actor, recipientsFrom(form));
 }
 
 /* -------------------------------------------- */

@@ -28,7 +28,8 @@ export const ACTIONS = Object.freeze({
   NAVIGATE: "NAVIGATE",
   REVEAL: "REVEAL",
   TAKE: "TAKE",
-  REFRESH: "REFRESH"
+  REFRESH: "REFRESH",
+  PLAYER_OPENED: "PLAYER_OPENED"
 });
 
 export const REVEAL_MODES = Object.freeze({

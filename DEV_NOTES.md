@@ -63,6 +63,7 @@ Canal: `module.velvet-loot-experience`. Cada mensaje es `{ action, sender, users
 | `REVEAL` | GM → todos | `actorUuid`, `itemIds` | Marca objetos como revelados |
 | `REFRESH` | jugador → GM | `request: true`, `actorUuid` | Pide el estado de revelado |
 | `REFRESH` | GM → jugador | `actorUuid`, `state` | Lo entrega |
+| `PLAYER_OPENED` | jugador → GMs | `actorUuid` | Avisa de que el jugador abrió ese botín por su cuenta |
 | `TAKE` | jugador → GM | `requestId`, `actorUuid`, `itemId`, `quantity`, `recipientUuid` | Pide una recogida nativa |
 | `TAKE` | GM → jugador | `result: true`, `requestId`, `ok`, `error` | Resultado |
 
@@ -71,6 +72,7 @@ Canal: `module.velvet-loot-experience`. Cada mensaje es `{ action, sender, users
 Validación:
 
 - `OPEN`, `CLOSE`, `NAVIGATE`, `REVEAL`, la respuesta de `REFRESH` y el resultado de `TAKE` se ignoran si el emisor no es GM.
+- `PLAYER_OPENED` solo lo atienden los clientes GM y solo si el emisor no es GM; muestra un aviso y nunca abre nada.
 - Las peticiones de jugador solo las atiende el GM activo (`game.users.activeGM.isSelf`).
 - Una petición `TAKE` se rechaza salvo que: el módulo y la recogida de jugadores estén activos; el actor sea un actor de botín nativo; el emisor sea dueño del destinatario; el emisor pueda saquear el actor (`isLootableBy` en PF2e, permiso `LIMITED` en el resto); el objeto siga en la pila; esté revelado si el modo es "controlado por el GM"; y la cantidad sea un entero entre 1 y lo disponible.
 - Las pilas de Item Piles nunca pasan por `TAKE`: las mueve y valida Item Piles.
